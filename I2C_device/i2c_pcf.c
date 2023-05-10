@@ -16,13 +16,13 @@
 #define SLAVE_DEVICE_NAME "LCD_DISPLAY"
 
 
-#define LCD_BACKLIGHT 0x08
+#define LCD_BACKLIGHT 0x08 //enable the backlight
 
 #define LCD_CGRAM 0x40 //character Graphics ram 
 #define LCD_DDRAM 0x80 //Display data ram
 
-#define LCD_EN 0x04
-#define LCD_RS 0x01
+#define LCD_EN 0x04 //Enable
+#define LCD_RS 0x01 //register select
 
 
 static dev_t dev =0;
@@ -49,6 +49,7 @@ static int I2C_write(unsigned char*databuf,unsigned int len)
 }
 
 */
+/*send function for send command */
 
 static void lcd_send_command(unsigned char command)
 {
@@ -69,7 +70,7 @@ static void lcd_send_command(unsigned char command)
 }
 
 
-
+/*send function for send data*/
 static void lcd_send_data(char data)
 {
 	uint8_t databuf[4];
